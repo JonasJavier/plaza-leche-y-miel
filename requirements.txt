@@ -1,0 +1,7 @@
+# Para compilar el sitio (tools/build.py)
+segno>=1.6
+# Solo para regenerar imágenes, logo y mural (tools/*.py)
+Pillow>=10
+fonttools>=4.47
+brotli>=1.1
+numpy>=1.26

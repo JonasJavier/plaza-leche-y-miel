@@ -1,0 +1,10 @@
+# Sitio compilado: lo genera tools/build.py (y GitHub Actions al publicar)
+site/
+# Vistas previas de trabajo
+source/prev-*.jpg
+source/contact-*.jpg
+source/fonts/gf.css
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

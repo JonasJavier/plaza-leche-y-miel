@@ -1,0 +1,35 @@
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="{{ base }}assets/img/logo-claro.svg" width="170" height="57" alt="Leche + Miel Plaza" loading="lazy">
+      <p class="footer__line" data-i18n="footer.linea">Pastelería, café y desayunos en el Boulevard de Juan Dolio. Cremoso como leche, dulce como miel.</p>
+    </div>
+    <div>
+      <h2 class="footer__h" data-i18n="footer.visitanos">Visítanos</h2>
+      <address>
+        {{ site.street }}<br>
+        Juan Dolio, San Pedro de Macorís<br>
+        <span class="footer__muted">{{ site.reference }}</span>
+      </address>
+      <p class="footer__hours" data-i18n-html="footer.horas">Martes a jueves: 8:00&nbsp;a.&nbsp;m. – 7:00&nbsp;p.&nbsp;m.<br>Viernes a domingo: 8:00&nbsp;a.&nbsp;m. – 9:00&nbsp;p.&nbsp;m.<br>Lunes: cerrado</p>
+    </div>
+    <div>
+      <h2 class="footer__h" data-i18n="footer.contacto">Contacto</h2>
+      <ul class="footer__links">
+        <li><a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-wa-generic><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a></li>
+        <li><a href="tel:{{ site.phone }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{{ site.phoneDisplay }}</a></li>
+        <li><a href="{{ site.instagram }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-instagram"/></svg>{{ site.instagramHandle }}</a></li>
+        <li><a href="{{ site.facebook }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-facebook"/></svg>Facebook</a></li>
+        <li><a href="{{ site.tripadvisor }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-star"/></svg>TripAdvisor</a></li>
+      </ul>
+    </div>
+    <div class="footer__qr">
+      {{ qr }}
+      <p data-i18n="footer.qr">Abre este sitio en tu teléfono</p>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <p data-i18n="footer.propuesta">Propuesta de sitio web preparada para Plaza Leche y Miel.</p>
+    <p data-i18n="footer.credito">Fotos, carta y marca: Plaza Leche y Miel.</p>
+  </div>
+</footer>

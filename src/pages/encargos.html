@@ -1,0 +1,194 @@
+<!-- meta
+title: Encargos y eventos · Plaza Leche y Miel, Juan Dolio
+description: Encarga bizcochos, la bandeja de desayuno que lo tiene todo, galletas decoradas y picaderas, con tu dedicatoria. Celebra cumpleaños en la pista de patinaje de la plaza.
+scripts: images.js, encargos.js
+-->
+<section class="page-head">
+  <div class="wrap">
+    <h1 data-i18n-html="enc.h1">Encárgalo <em>con dedicatoria</em></h1>
+    <p data-i18n="enc.p">Escoge qué quieres, escribe tu mensaje y mira cómo queda en la tarjetita. Te confirmamos por WhatsApp.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:28px">
+  <div class="wrap composer">
+    <form class="composer__form" novalidate data-encargo>
+      <fieldset class="step">
+        <legend class="step__t"><span class="step__n">1</span><span data-i18n="enc.s1">¿Qué vas a encargar?</span></legend>
+        <div class="kinds" role="radiogroup">
+          <label class="kind"><input type="radio" name="tipo" value="bizcocho" checked><span>{% img bizcocho-cumple | | (min-width: 1024px) 22vw, 62vw %}<b data-i18n="enc.k1">Bizcocho de celebración</b><small data-i18n="enc.k1s">Cumpleaños, aniversarios y sorpresas</small></span></label>
+          <label class="kind"><input type="radio" name="tipo" value="bandeja"><span>{% img bandeja | | (min-width: 1024px) 22vw, 62vw %}<b data-i18n="enc.k2">La bandeja que lo tiene todo</b><small data-i18n="enc.k2s">El desayuno perfecto para sorprender</small></span></label>
+          <label class="kind"><input type="radio" name="tipo" value="galletas"><span>{% img galletas-vintage | | (min-width: 1024px) 22vw, 62vw %}<b data-i18n="enc.k3">Galletas decoradas</b><small data-i18n="enc.k3s">Con el tema y el texto de tu evento</small></span></label>
+          <label class="kind"><input type="radio" name="tipo" value="picaderas"><span>{% img empanadas | | (min-width: 1024px) 22vw, 62vw %}<b data-i18n="enc.k4">Picaderas para tu evento</b><small data-i18n="enc.k4s">Croquetas, canastitas y mini empanadas</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend class="step__t"><span class="step__n">2</span><span data-i18n="enc.s2">Los detalles</span></legend>
+        <div class="fields">
+          <div class="field-row" data-for="bizcocho">
+            <div class="field">
+              <label for="e-sabor" data-i18n="enc.sabor">Sabor</label>
+              <select id="e-sabor" name="sabor">
+                <option data-i18n="enc.sab1">Tres leches de vainilla</option>
+                <option data-i18n="enc.sab2">Tres leches de chocolate</option>
+                <option data-i18n="enc.sab3">Cheesecake de coco</option>
+                <option data-i18n="enc.sab4">Cheesecake de chocolate</option>
+                <option value="Lo conversamos" data-i18n="enc.sab5">Otro: lo conversamos</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="e-porciones" data-i18n="enc.porciones">Porciones</label>
+              <select id="e-porciones" name="porciones">
+                <option>8 a 10</option><option selected>12 a 15</option><option>20 a 25</option><option value="30 o más" data-i18n="enc.30">30 o más</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="seg" data-for="bandeja">
+            <legend class="field__label" data-i18n="enc.para">¿Para cuántos?</legend>
+            <label><input type="radio" name="bandeja" value="Para 1 persona" checked><span data-i18n="enc.para1">Para 1</span></label>
+            <label><input type="radio" name="bandeja" value="Para 2 personas"><span data-i18n="enc.para2">Para 2</span></label>
+          </fieldset>
+          <div class="field-row" data-for="galletas">
+            <div class="field">
+              <label for="e-cant" data-i18n="enc.cant">Cantidad</label>
+              <select id="e-cant" name="cantidad">
+                <option data-i18n="enc.doc1">1 docena</option><option data-i18n="enc.doc2">2 docenas</option><option data-i18n="enc.doc3">3 docenas o más</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="e-tema" data-i18n="enc.tema">Tema o colores</label>
+              <input id="e-tema" name="tema" type="text" maxlength="40" placeholder="Vintage, safari, rosado…" data-i18n-ph="enc.temaph">
+            </div>
+          </div>
+          <div data-for="picaderas" class="fields">
+            <fieldset class="checks" style="border:0;padding:0;margin:0">
+              <legend class="field__label" data-i18n="enc.cuales">¿Cuáles?</legend>
+              <label><input type="checkbox" name="picaderas" value="Croquetas de pollo" checked><span data-i18n="enc.p1">Croquetas de pollo</span></label>
+              <label><input type="checkbox" name="picaderas" value="Canastitas de plátano" checked><span data-i18n="enc.p2">Canastitas de plátano</span></label>
+              <label><input type="checkbox" name="picaderas" value="Mini empanadas"><span data-i18n="enc.p3">Mini empanadas</span></label>
+            </fieldset>
+            <p class="field__err" id="e-pic-err" role="alert"></p>
+            <div class="field">
+              <label for="e-invitados" data-i18n="enc.invitados">Invitados</label>
+              <select id="e-invitados" name="invitados"><option>10 a 20</option><option selected>20 a 40</option><option>40 a 60</option><option value="Más de 60" data-i18n="enc.mas60">Más de 60</option></select>
+            </div>
+          </div>
+          <div class="field" data-for="bizcocho bandeja galletas">
+            <label for="e-dedicatoria" data-i18n="enc.dedi">Dedicatoria</label>
+            <input id="e-dedicatoria" name="dedicatoria" type="text" maxlength="40" placeholder="¡Feliz día, mamá!" aria-describedby="e-dedi-c" data-i18n-ph="enc.dediph">
+            <p class="counter" id="e-dedi-c" aria-live="polite"><span data-dedi-n>0</span>/40</p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="e-fecha" data-i18n="enc.fecha">¿Para qué día?</label>
+              <input id="e-fecha" name="fecha" type="date" required aria-describedby="e-fecha-err e-fecha-hint">
+              <p class="field__hint" id="e-fecha-hint" data-i18n="enc.fechahint">Con al menos 2 días de antelación.</p>
+              <p class="field__err" id="e-fecha-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="e-hora" data-i18n="enc.hora">Hora de recogida</label>
+              <select id="e-hora" name="hora" required aria-describedby="e-hora-err"><option value="" data-i18n="res.eligefecha">Elige la fecha primero</option></select>
+              <p class="field__err" id="e-hora-err" role="alert"></p>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend class="step__t"><span class="step__n">3</span><span data-i18n="enc.s3">Envíalo por WhatsApp</span></legend>
+        <div class="fields">
+          <div class="field">
+            <label for="e-nombre" data-i18n="res.nombre">Tu nombre</label>
+            <input id="e-nombre" name="nombre" type="text" autocomplete="name" maxlength="60" required aria-describedby="e-nombre-err">
+            <p class="field__err" id="e-nombre-err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="e-nota" data-i18n="cart.nota">Nota (opcional)</label>
+            <textarea id="e-nota" name="nota" maxlength="200" placeholder="Alergias, una foto de referencia que te enviaremos…" data-i18n-ph="enc.notaph"></textarea>
+          </div>
+          <button class="btn btn--wa btn--block" type="submit"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="enc.enviar">Enviar encargo por WhatsApp</span></button>
+          <p class="modal__note" data-i18n="res.nota">Se abre WhatsApp con tu mensaje listo. Tú decides si lo envías.</p>
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="composer__preview" aria-label="Vista previa del encargo" data-i18n-aria="enc.prev">
+      <div class="preview">
+        <figure class="preview__media">
+          <img data-prev-img src="assets/img/bizcocho-frutas-720.webp" srcset="assets/img/bizcocho-frutas-480.webp 480w, assets/img/bizcocho-frutas-720.webp 720w" sizes="(min-width: 1024px) 40vw, 100vw" width="720" height="720" alt="Bizcocho decorado con frutas" decoding="async">
+          <div class="tag-card" data-tag><span class="tag-card__txt" data-tag-txt>¡Feliz día, mamá!</span></div>
+        </figure>
+        <div class="preview__msg"><p class="preview__msg-t" data-i18n="enc.msgt">Así llega tu mensaje</p><div data-prev-msg></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section events" id="eventos" aria-labelledby="ev-t">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="ev-t" data-i18n="ev.t">Celebra en la plaza</h2>
+      <p data-i18n="ev.p">La pista de patinaje se alquila para cumpleaños y tardes en grupo. Nosotros ponemos el bizcocho y las picaderas.</p>
+    </div>
+    <div class="events__grid">
+      <div class="fields" style="gap:28px">
+        <div class="events__photos">
+          <figure>{% img pista-neon | Pista de patinaje con luces de neón | (min-width: 1024px) 24vw, 46vw %}</figure>
+          <figure>{% img pista-globos | Niños celebrando un cumpleaños en la pista con globos | (min-width: 1024px) 24vw, 46vw %}</figure>
+        </div>
+        <ol class="process">
+          <li><div><b data-i18n="ev.1t">Cuéntanos la fecha</b><span data-i18n="ev.1p">Y cuántos invitados esperas.</span></div></li>
+          <li><div><b data-i18n="ev.2t">Elige el menú</b><span data-i18n="ev.2p">Bizcocho, picaderas, jugos y frozen.</span></div></li>
+          <li><div><b data-i18n="ev.3t">Te confirmamos</b><span data-i18n="ev.3p">Por WhatsApp, con todo por escrito.</span></div></li>
+        </ol>
+      </div>
+      <form class="card-form" novalidate data-evento>
+        <h3 data-i18n="ev.form">Pide tu cotización</h3>
+        <div class="field-row">
+          <div class="field">
+            <label for="v-fecha" data-i18n="res.fecha">Fecha</label>
+            <input id="v-fecha" name="fecha" type="date" required aria-describedby="v-fecha-err">
+            <p class="field__err" id="v-fecha-err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="v-invitados" data-i18n="enc.invitados">Invitados</label>
+            <select id="v-invitados" name="invitados"><option>10 a 20</option><option selected>20 a 40</option><option>40 a 60</option><option value="Más de 60" data-i18n="enc.mas60">Más de 60</option></select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="v-tipo" data-i18n="ev.tipo">Tipo de evento</label>
+            <select id="v-tipo" name="tipo">
+              <option data-i18n="ev.t1">Cumpleaños infantil</option>
+              <option data-i18n="ev.t2">Cumpleaños</option>
+              <option data-i18n="ev.t3">Baby shower</option>
+              <option data-i18n="ev.t4">Grupo o misión</option>
+              <option data-i18n="ev.t5">Reunión de trabajo</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="v-espacio" data-i18n="ev.espacio">Espacio</label>
+            <select id="v-espacio" name="espacio">
+              <option data-i18n="ev.e1">La pista de patinaje</option>
+              <option data-i18n="ev.e2">El patio</option>
+              <option data-i18n="ev.e3">El salón</option>
+            </select>
+          </div>
+        </div>
+        <fieldset class="checks" style="border:0;padding:0;margin:0">
+          <legend class="field__label" data-i18n="ev.necesitas">¿Qué necesitas?</legend>
+          <label><input type="checkbox" name="extras" value="Bizcocho" checked><span data-i18n="ev.x1">Bizcocho</span></label>
+          <label><input type="checkbox" name="extras" value="Picaderas" checked><span data-i18n="ev.x2">Picaderas</span></label>
+          <label><input type="checkbox" name="extras" value="Jugos y frozen"><span data-i18n="ev.x3">Jugos y frozen</span></label>
+        </fieldset>
+        <div class="field">
+          <label for="v-nombre" data-i18n="res.nombre">Tu nombre</label>
+          <input id="v-nombre" name="nombre" type="text" autocomplete="name" maxlength="60" required aria-describedby="v-nombre-err">
+          <p class="field__err" id="v-nombre-err" role="alert"></p>
+        </div>
+        <button class="btn btn--wa btn--block" type="submit"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="ev.enviar">Pedir cotización por WhatsApp</span></button>
+      </form>
+    </div>
+  </div>
+</section>

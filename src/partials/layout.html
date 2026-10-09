@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es-DO">
+<head>
+{% include head.html %}
+</head>
+<body class="{{ body_class }}">
+{% include icons.html %}
+<a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+{% include header.html %}
+<main id="contenido" tabindex="-1">
+{{ content }}
+</main>
+{% include footer.html %}
+{{ bottom_bar }}
+{% include dialogs.html %}
+<script src="{% asset js/config.js %}" defer></script>
+<script src="{% asset js/i18n-en.js %}" defer></script>
+<script src="{% asset js/main.js %}" defer></script>
+{{ page_scripts }}
+</body>
+</html>

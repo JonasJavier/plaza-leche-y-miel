@@ -1,0 +1,274 @@
+<!-- meta
+title: Plaza Leche y Miel · Pastelería, café y desayunos en Juan Dolio
+description: Tres leches, mangú, café frío y bizcochos por encargo en el Boulevard de Juan Dolio, km 8. Mira el menú, encarga con dedicatoria y escríbenos por WhatsApp.
+hero: mostrador
+hero_sizes: (min-width: 1024px) 46vw, 100vw
+scripts: images.js, menu-data.js, menu.js
+-->
+<section class="hero" aria-labelledby="hero-t">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="status" data-status aria-live="polite"><span class="status__dot" aria-hidden="true"></span><span class="status__text">Horario</span></p>
+      <h1 class="mural" id="hero-t">
+        <span class="sr" data-i18n="hero.h1">Cremoso como leche, dulce como miel</span>
+        <span class="mural__row mural__row--1" aria-hidden="true"><span class="mw mw--cremoso"></span><em>como</em></span>
+        <span class="mw mw--leche" aria-hidden="true"></span>
+        <span class="mural__row mural__row--2" aria-hidden="true"><span class="mw mw--dulce"></span><em>como</em></span>
+        <span class="mw mw--miel" aria-hidden="true"></span>
+      </h1>
+      <p class="hero__lead" data-i18n-html="hero.lead">Pastelería, café y desayunos en el <strong>Boulevard de Juan Dolio</strong>. Tres leches, mangú con su cebollita y café frío para el calor de la playa.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--main" href="encargos.html"><svg aria-hidden="true"><use href="#i-cake"/></svg><span data-i18n="cta.encargar">Encargar con dedicatoria</span></a>
+        <a class="btn btn--ghost" href="menu.html" data-i18n="cta.menu">Ver el menú</a>
+      </div>
+    </div>
+    <figure class="hero__photo">
+      {% img mostrador | Mostrador de Leche + Miel: bizcochos bajo campanas de cristal, cupcakes y pared de ladrillo con estantes | (min-width: 1024px) 46vw, 100vw | | eager %}
+      <figcaption><strong data-i18n="hero.cap">El mostrador</strong><span>Boulevard de Juan Dolio, km 8</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<nav class="quick" aria-label="Contacto rápido">
+  <ul class="wrap quick__grid">
+    <li><a href="tel:{{ site.phone }}"><svg aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="quick.llamar">Llamar</span></a></li>
+    <li><a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-wa-generic><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a></li>
+    <li><a href="{{ site.mapsDirections }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-route"/></svg><span data-i18n="quick.llegar">Cómo llegar</span></a></li>
+    <li><a href="{{ site.instagram }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a></li>
+  </ul>
+</nav>
+
+<section class="section" aria-labelledby="favs-t">
+  <div class="wrap">
+    <div class="section-head section-head--row">
+      <div>
+        <h2 id="favs-t" data-i18n="favs.t">Lo que más se pide</h2>
+        <p data-i18n="favs.p">Los favoritos de la vitrina y de las reseñas.</p>
+      </div>
+      <a class="link-arrow" href="menu.html"><span data-i18n="favs.link">Ver el menú completo</span><svg aria-hidden="true"><use href="#i-right"/></svg></a>
+    </div>
+    <div class="carousel" data-carousel>
+      <ul class="carousel__track" data-favs aria-label="Favoritos de la casa" tabindex="0"></ul>
+      <div class="carousel__ui">
+        <div class="carousel__bar" aria-hidden="true"><span></span></div>
+        <div class="carousel__arrows">
+          <button class="icon-btn" type="button" data-prev aria-label="Anteriores" data-i18n-aria="car.prev"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+          <button class="icon-btn" type="button" data-next aria-label="Siguientes" data-i18n-aria="car.next"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section story" aria-labelledby="story-t">
+  <div class="wrap story__grid">
+    <div class="story__text" data-reveal>
+      <p class="kicker" data-i18n="story.k">Más de diez años en el Boulevard</p>
+      <h2 id="story-t" data-i18n="story.t">Una plaza hecha con cariño</h2>
+      <p data-i18n="story.p1">Leche + Miel es más que una pastelería: es una placita con café, una tiendita de artesanía y joyería hecha a mano, un patio bajo la enramada y hasta una pista de patinaje.</p>
+      <p data-i18n="story.p2">Quienes vienen lo cuentan en sus reseñas: aquí se trabaja con amor, y lo que se mueve en la plaza apoya a mujeres de la comunidad. Por eso tantos vuelven cada vez que pasan por Juan Dolio.</p>
+      <ul class="story__facts">
+        <li><strong>4.7</strong><span data-i18n="story.f1">en TripAdvisor y en Google</span></li>
+        <li><strong>8:00 a.&nbsp;m.</strong><span data-i18n="story.f2">abrimos de martes a domingo</span></li>
+        <li><strong data-i18n="story.f3t">Sin gluten</strong><span data-i18n="story.f3">panes, coco horneado y mousse de chinola</span></li>
+        <li><strong data-i18n="story.f4t">Para llevar</strong><span data-i18n="story.f4">pide por WhatsApp y recoge en la plaza</span></li>
+      </ul>
+    </div>
+    <div class="story__photos" data-reveal>
+      <figure>{% img mural | El mural del salón: «Cremoso como leche, dulce como miel» pintado a mano en la pared | (min-width: 1024px) 28vw, 52vw %}</figure>
+      <figure>{% img cupcakes | Dos cupcakes con frosting de caramelo y de vainilla sobre fondo de hojas | (min-width: 1024px) 22vw, 42vw %}</figure>
+    </div>
+  </div>
+</section>
+
+<section class="section moments" aria-labelledby="mom-t">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="mom-t" data-i18n="mom.t">De la mañana a la tarde</h2>
+      <p data-i18n="mom.p">Abrimos con el desayuno y cerramos con el postre.</p>
+    </div>
+    <ol class="moments__list">
+      <li class="moment" data-reveal>
+        <div class="moment__img">{% img mangu | Mangú con huevos fritos y bacon | (min-width: 768px) 30vw, 112px %}</div>
+        <div class="moment__body">
+          <span class="moment__time"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="mom.1k">8:00 a.&nbsp;m. · Desayuno</span></span>
+          <h3 data-i18n="mom.1t">Mangú, pancakes y café</h3>
+          <p data-i18n="mom.1p">Mangú con su cebollita, omelette, y granola con waffles de calabaza sin gluten.</p>
+          <p class="moment__promo" data-i18n="mom.promo">De martes a viernes: tú eliges el desayuno y el café va por la casa.</p>
+        </div>
+      </li>
+      <li class="moment" data-reveal>
+        <div class="moment__img">{% img sandwich-platano | Sándwich de plátano con papas fritas y jugo verde | (min-width: 768px) 30vw, 112px %}</div>
+        <div class="moment__body">
+          <span class="moment__time"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="mom.2k">Mediodía · Algo salado</span></span>
+          <h3 data-i18n="mom.2t">Sándwich de plátano y pastelón</h3>
+          <p data-i18n="mom.2p">Patacón con pollo, chicken fingers, ensaladas y combos con jugo natural.</p>
+        </div>
+      </li>
+      <li class="moment" data-reveal>
+        <div class="moment__img">{% img brownie-helado | Brownie con helado de fresa y salsa de chocolate | (min-width: 768px) 30vw, 112px %}</div>
+        <div class="moment__body">
+          <span class="moment__time"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="mom.3k">Tarde · El antojo</span></span>
+          <h3 data-i18n="mom.3t">Tres leches y algo bien frío</h3>
+          <p data-i18n="mom.3p">Frozen de chinola, café frío y brownie con helado. Viernes a domingo, hasta las 9:00 p.&nbsp;m.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="esp-t">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="esp-t" data-i18n="esp.t">Quédate un rato</h2>
+      <p data-i18n="esp.p">Afuera, la brisa del Boulevard. Adentro, aire acondicionado y el mural.</p>
+    </div>
+    <ul class="spaces">
+      <li class="space" data-reveal>
+        {% img patio | Patio techado con enramada, mesas de madera y muchas plantas | (min-width: 768px) 60vw, 100vw %}
+        <div class="space__txt"><h3 data-i18n="esp.1t">El patio bajo la enramada</h3><p data-i18n="esp.1p">Sombra, matas por todos lados y mesas largas para el grupo completo.</p></div>
+      </li>
+      <li class="space" data-reveal>
+        {% img mural | Salón con el mural «Cremoso como leche, dulce como miel» | (min-width: 768px) 30vw, 100vw %}
+        <div class="space__txt"><h3 data-i18n="esp.2t">El salón</h3><p data-i18n="esp.2p">Aire acondicionado, ladrillo y el mural que nos da nombre.</p></div>
+      </li>
+      <li class="space space--plain" data-reveal>
+        <div class="space__txt"><span class="space__icon" aria-hidden="true">&amp;</span><h3 data-i18n="esp.3t">La tiendita</h3><p data-i18n="esp.3p">Artesanía y joyería hecha a mano para llevarte un recuerdo de Juan Dolio.</p></div>
+      </li>
+      <li class="space" data-reveal>
+        {% img pista-neon | Pista de patinaje con luces de neón y un árbol iluminado | (min-width: 768px) 60vw, 100vw %}
+        <div class="space__txt"><h3 data-i18n="esp.4t">La pista de patinaje</h3><p data-i18n="esp.4p">Luces de neón y patines para cumpleaños y tardes en familia.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section firma" aria-labelledby="firma-t">
+  <div class="wrap firma__grid">
+    <div class="firma__copy" data-reveal>
+      <h2 id="firma-t" data-i18n="firma.t">Encárgalo con dedicatoria</h2>
+      <p data-i18n="firma.p">Bizcochos de cumpleaños, la bandeja de desayuno que lo tiene todo, galletas decoradas y picaderas para tu evento. Escribe tu mensaje, mira cómo queda en la tarjetita y nos lo mandas por WhatsApp.</p>
+      <a class="btn btn--miel" href="encargos.html"><svg aria-hidden="true"><use href="#i-cake"/></svg><span data-i18n="firma.cta">Armar mi encargo</span></a>
+    </div>
+    <div class="firma__visual" data-reveal>
+      <figure>{% img bizcocho-cumple | Bizcocho de cumpleaños con rosas, macarons y un topper dorado | (min-width: 1024px) 420px, 90vw %}</figure>
+      <div class="tag-card" aria-hidden="true"><span class="tag-card__txt" data-i18n="firma.tag">¡Feliz día, mamá!</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section group" aria-labelledby="grupo-t">
+  <div class="wrap group__grid">
+    <div>
+      <h2 id="grupo-t" data-i18n="grupo.t">¿Vienen en grupo?</h2>
+      <p style="margin-top:12px" data-i18n="grupo.p">Equipos de misión, familias y cumpleaños: dinos cuántos son y te preparamos el patio.</p>
+      <p class="group__note" style="margin-top:10px" data-i18n="grupo.nota">Un grupo de 44 personas nos visitó todos los días de su viaje, según contaron en TripAdvisor.</p>
+    </div>
+    <div class="group__cta">
+      <button class="btn btn--main" type="button" data-open="reservar"><svg aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="cta.reservar">Reservar mesa</span></button>
+      <a class="btn btn--ghost" href="tel:{{ site.phone }}"><svg aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="quick.llamar">Llamar</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="res-t">
+  <div class="wrap">
+    <div class="section-head section-head--row">
+      <div>
+        <h2 id="res-t" data-i18n="rev.t">Lo cuentan quienes vienen</h2>
+        <p data-i18n="rev.p">Reseñas reales, traducidas del inglés cuando hace falta.</p>
+      </div>
+      <div class="ratings">
+        <a class="rating" href="{{ site.tripadvisor }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-star"/></svg><strong>4.7</strong><span>TripAdvisor<br><span data-i18n="rev.ta">14 opiniones · oct. 2026</span></span></a>
+        <a class="rating" href="{{ site.mapsPlace }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-star"/></svg><strong>4.7</strong><span>Google<br><span data-i18n="rev.g">159 reseñas · oct. 2026</span></span></a>
+      </div>
+    </div>
+    <ul class="reviews">
+      <li><figure class="review"><blockquote data-i18n="rev.1">Un trabajo hecho con amor, con buena vibra y una misión altruista.</blockquote><figcaption><strong>Melissa I.</strong> · TripAdvisor · <span data-i18n="mes.mar26">marzo 2026</span></figcaption></figure></li>
+      <li><figure class="review"><blockquote data-i18n="rev.2">¡Tienes que probar el patacón con pollo!</blockquote><figcaption><strong>Rob K.</strong> · Google · <span data-i18n="mes.ene25">enero 2025</span></figcaption></figure></li>
+      <li><figure class="review"><blockquote data-i18n="rev.3">Me encanta lo que este café hace por las mujeres de la comunidad.</blockquote><figcaption><strong>Balibabs</strong> · TripAdvisor · <span data-i18n="mes.ene24">enero 2024</span></figcaption></figure></li>
+      <li><figure class="review"><blockquote data-i18n="rev.4">Una tienda preciosa, y un lugar maravilloso para los niños.</blockquote><figcaption><strong>Cherokee P.</strong> · Google · <span data-i18n="mes.mar26">marzo 2026</span></figcaption></figure></li>
+      <li><figure class="review"><blockquote data-i18n="rev.5">Muy buen café y muy buenos batidos.</blockquote><figcaption><strong>Nathan O.</strong> · Google · <span data-i18n="mes.feb26">febrero 2026</span></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="gal-t">
+  <div class="wrap">
+    <div class="section-head section-head--row">
+      <h2 id="gal-t" data-i18n="gal.t">Pasa y mira</h2>
+      <a class="link-arrow" href="galeria.html"><span data-i18n="gal.link">Ver la galería completa</span><svg aria-hidden="true"><use href="#i-right"/></svg></a>
+    </div>
+    <ul class="gallery" data-gallery>
+      <li><button type="button" data-full="patio-jardin" data-cap="El patio y el jardín">{% img patio-jardin | Patio con muebles de madera, cojines y jardín tropical | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="bizcocho-frutas" data-cap="Bizcocho de frutas">{% img bizcocho-frutas | Bizcocho decorado con fresas, kiwi, mango y melocotón | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="capuchino" data-cap="Cappuccino">{% img capuchino | Cappuccino con canela en taza naranja | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="gallepapas" data-cap="Gallepapas, lo nuevo de la casa">{% img gallepapas | Bastones de galleta servidos como papitas, con salsa de chocolate | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="empanadas" data-cap="Empanadas">{% img empanadas | Dos empanadas doradas con salsa rosada | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="pista-globos" data-cap="Cumpleaños en la pista">{% img pista-globos | Cumpleaños en la pista de patinaje con globos de colores | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="bandeja" data-cap="La bandeja que lo tiene todo">{% img bandeja | Bandeja de desayuno con waffle, croquetas, canastitas, sándwiches, jugo y café | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+      <li><button type="button" data-full="patio-mesas" data-cap="Mesas bajo la enramada">{% img patio-mesas | Mesas de colores bajo el techo de enramada | (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw %}</button></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section faq" aria-labelledby="faq-t">
+  <div class="wrap faq__grid">
+    <div class="section-head">
+      <h2 id="faq-t" data-i18n="faq.t">Antes de venir</h2>
+      <p data-i18n="faq.p">Lo que más nos preguntan por WhatsApp.</p>
+    </div>
+    <div class="faq__list">
+      <details><summary data-i18n="faq.1q">¿Hay estacionamiento?</summary><p data-i18n="faq.1a">Sí, gratis y fuera de la calle, en la misma plaza.</p></details>
+      <details><summary data-i18n="faq.2q">¿Puedo reservar mesa?</summary><p data-i18n="faq.2a">Sí. Usa el botón «Reservar mesa», elige día, hora y cuántos son, y te confirmamos por WhatsApp.</p></details>
+      <details><summary data-i18n="faq.3q">¿Reciben grupos grandes?</summary><p data-i18n="faq.3a">Sí. Equipos de misión, familias y cumpleaños caben en el patio. Escríbenos con un par de días de antelación para tenerlo listo.</p></details>
+      <details><summary data-i18n="faq.4q">¿Tienen delivery?</summary><p data-i18n="faq.4a">Puedes pedir para llevar: arma tu pedido en el menú, nos lo envías por WhatsApp y lo recoges en la plaza. Pregúntanos si llegamos a tu zona de Juan Dolio.</p></details>
+      <details><summary data-i18n="faq.5q">¿Cómo puedo pagar?</summary><p data-i18n="faq.5a">En efectivo o con tarjeta Visa, Mastercard o Discover.</p></details>
+      <details><summary data-i18n="faq.6q">¿Es buen lugar para ir con niños?</summary><p data-i18n="faq.6a">Sí. Hay espacio para las familias, postres para todos los gustos y una pista de patinaje en la plaza.</p></details>
+      <details><summary data-i18n="faq.7q">¿Tienen opciones sin gluten?</summary><p data-i18n="faq.7a">Sí: pan de guineo, pan de calabaza, coco horneado, mousse de chinola y waffles de calabaza. En el menú están marcados.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section visit" id="ubicacion" aria-labelledby="ubi-t">
+  <div class="wrap visit__grid">
+    <div>
+      <div class="section-head">
+        <h2 id="ubi-t" data-i18n="ubi.t">Te esperamos en el Boulevard</h2>
+      </div>
+      <p class="status visit__status" data-status><span class="status__dot" aria-hidden="true"></span><span class="status__text">Horario</span></p>
+      <table class="hours" data-hours>
+        <caption class="sr" data-i18n="ubi.cap">Horario de la semana</caption>
+        <tbody>
+{{ hours_rows }}
+        </tbody>
+      </table>
+    </div>
+    <div class="visit__map">
+      <figure class="map" data-map="{{ site.mapEmbed }}">
+        {% img mapa | Mapa: Plaza Leche y Miel en el Boulevard de Juan Dolio, cerca de la calle Calamares | (min-width: 1024px) 50vw, 100vw %}
+        <button class="btn btn--light map__btn" type="button" data-map-load><svg aria-hidden="true"><use href="#i-route"/></svg><span data-i18n="ubi.vermapa">Ver mapa</span></button>
+        <small class="map__credit">© OpenStreetMap</small>
+      </figure>
+      <address class="visit__addr">
+        <span>{{ site.street }}, Juan Dolio</span>
+        <small>{{ site.reference }}</small>
+      </address>
+      <div class="visit__btns">
+        <a class="btn btn--main" href="{{ site.mapsDirections }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-route"/></svg><span data-i18n="cta.llegar">Cómo llegar</span></a>
+        <a class="btn btn--ghost" href="{{ site.waze }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-waze"/></svg>Waze</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section closing" aria-labelledby="cierre-t">
+  <div class="wrap">
+    <h2 id="cierre-t" data-i18n="cierre.t">¿Te apartamos un pedazo de tres leches?</h2>
+    <p data-i18n="cierre.p">Escríbenos y te lo guardamos para cuando pases por el Boulevard.</p>
+    <div class="closing__ctas">
+      <a class="btn btn--wa" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-wa-msg="cierre.msg"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="cta.pedirwa">Pedir por WhatsApp</span></a>
+      <a class="btn btn--ghost" href="menu.html" data-i18n="cta.menu">Ver el menú</a>
+    </div>
+  </div>
+</section>

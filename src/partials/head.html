@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<!-- Propuesta: no indexar para no competir con la presencia oficial (ver README) -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="{{ canonical }}">
+<meta name="theme-color" content="#3F4B24">
+<link rel="icon" href="{{ base }}favicon.ico" sizes="48x48">
+<link rel="icon" href="{{ base }}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ base }}assets/img/apple-touch-icon.png">
+<link rel="manifest" href="{{ base }}manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plaza Leche y Miel">
+<meta property="og:locale" content="es_DO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mostrador de Plaza Leche y Miel con bizcochos y la frase «Cremoso como leche, dulce como miel»">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ og_image }}">
+<link rel="preload" href="{{ base }}assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}assets/fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
+{{ preload }}
+<link rel="stylesheet" href="{% asset css/styles.css %}">
+{{ json_ld }}

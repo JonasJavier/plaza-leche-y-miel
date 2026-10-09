@@ -1,0 +1,37 @@
+<header class="header" data-header>
+  <div class="wrap header__in">
+    <a class="header__logo" href="{{ base }}index.html" aria-label="Plaza Leche y Miel, inicio">
+      <img src="{{ base }}assets/img/logo.svg" width="150" height="51" alt="">
+    </a>
+    <nav class="header__nav" aria-label="Principal">
+      <ul>
+{{ nav_desktop }}
+      </ul>
+    </nav>
+    <div class="header__tools">
+      <p class="status status--compact" data-status aria-live="polite"><span class="status__dot" aria-hidden="true"></span><span class="status__text">Horario</span></p>
+      <a class="lang-toggle" href="?lang=en" data-lang-toggle hreflang="en" lang="en" aria-label="View this site in English">EN</a>
+      <a class="btn btn--wa header__wa" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-wa-generic><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="cta.escribenos">Escríbenos</span></a>
+      <button class="header__burger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" data-open-sheet data-i18n-aria="nav.abrir"><svg aria-hidden="true"><use href="#i-burger"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<dialog class="sheet" id="hoja-nav" aria-label="Menú de navegación">
+  <div class="sheet__head">
+    <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span class="status__text">Horario</span></p>
+    <button class="icon-btn" type="button" data-close aria-label="Cerrar menú" data-i18n-aria="nav.cerrar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <nav aria-label="Secciones">
+    <ul class="sheet__links">
+{{ nav_sheet }}
+    </ul>
+  </nav>
+  <div class="sheet__foot">
+    <a class="btn btn--wa btn--block" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-wa-generic><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="cta.escribenos">Escríbenos por WhatsApp</span></a>
+    <div class="sheet__row">
+      <a href="tel:{{ site.phone }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{{ site.phoneDisplay }}</a>
+      <a class="lang-toggle" href="?lang=en" data-lang-toggle hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</dialog>

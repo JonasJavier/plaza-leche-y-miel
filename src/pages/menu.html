@@ -1,0 +1,101 @@
+<!-- meta
+title: Menú · Plaza Leche y Miel, Juan Dolio
+description: La carta completa de Leche + Miel: desayunos dominicanos, sándwiches, tres leches, tiramisú, café, frozen y batidos. Arma tu pedido y envíalo por WhatsApp.
+scripts: images.js, menu-data.js, menu.js
+-->
+<section class="menu-hero">
+  <div class="wrap">
+    <h1 data-i18n="menu.h1">La pizarra</h1>
+    <p data-i18n-html="menu.p">La misma carta del mostrador, ahora en tu teléfono. Toca <strong>+</strong> para armar tu pedido y nos lo envías por WhatsApp para recoger en la plaza.</p>
+    <div class="menu-tools">
+      <div class="search">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr" for="buscar" data-i18n="menu.buscar">Buscar en el menú</label>
+        <input id="buscar" type="search" placeholder="Busca «tres leches», «chinola»…" autocomplete="off" data-search data-i18n-ph="menu.ph">
+      </div>
+      <div class="chips" role="group" aria-label="Filtrar el menú" data-filters>
+        <button class="chip" type="button" aria-pressed="true" data-filter="" data-i18n="f.todo">Todo</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="popular" data-i18n="f.popular">Favoritos</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="nuevo" data-i18n="f.nuevo">Nuevo</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="sin-gluten" data-i18n="f.singluten">Sin gluten</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="saludable" data-i18n="f.saludable">Saludable</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="foto" data-i18n="f.foto">Con foto</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="cats" aria-label="Categorías del menú">
+  <div class="wrap cats__in">
+    <button class="cats__btn" type="button" data-cats-prev aria-label="Categorías anteriores" data-i18n-aria="cats.prev"><svg aria-hidden="true"><use href="#i-left"/></svg><span data-i18n="cats.ant">Anterior</span></button>
+    <ul class="cats__list" data-cats></ul>
+    <button class="cats__btn" type="button" data-cats-next aria-label="Más categorías" data-i18n-aria="cats.next"><span data-i18n="cats.sig">Siguiente</span><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div data-menu aria-live="polite"></div>
+  <div class="menu-empty" data-empty hidden>
+    <h2 data-i18n="menu.vacio.t">No lo encontramos en la pizarra</h2>
+    <p data-empty-text></p>
+    <div class="hero__ctas">
+      <button class="btn btn--light" type="button" data-clear data-i18n="menu.vacio.limpiar">Ver todo el menú</button>
+      <a class="btn btn--wa" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-empty-wa><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="menu.vacio.pregunta">Preguntar por WhatsApp</span></a>
+    </div>
+  </div>
+  <div class="menu-end">
+    <p data-i18n="menu.end">¿Es para un cumpleaños o una reunión? Encarga bizcochos, la bandeja de desayuno y picaderas con tiempo.</p>
+    <a class="btn btn--miel" href="encargos.html"><svg aria-hidden="true"><use href="#i-cake"/></svg><span data-i18n="firma.cta">Armar mi encargo</span></a>
+  </div>
+</div>
+
+<button class="cart-fab" type="button" data-cart-open hidden><svg aria-hidden="true"><use href="#i-bag"/></svg><span data-i18n="cart.fab">Tu pedido</span><span class="cart-fab__n" data-cart-count>0</span></button>
+
+<dialog class="drawer" id="pedido" aria-labelledby="pedido-t">
+  <form class="drawer__form" method="dialog" novalidate data-cart-form style="display:contents">
+    <div class="drawer__head">
+      <h2 id="pedido-t" data-i18n="cart.t">Tu pedido</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Cerrar" data-i18n-aria="cerrar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="drawer__body">
+      <ul class="cart-list" data-cart-list></ul>
+      <fieldset class="seg">
+        <legend class="field__label" data-i18n="cart.entrega">¿Cómo lo quieres?</legend>
+        <label><input type="radio" name="entrega" value="recoger" checked><span data-i18n="cart.recoger">Recoger en la plaza</span></label>
+        <label><input type="radio" name="entrega" value="delivery"><span data-i18n="cart.delivery">Delivery en Juan Dolio</span></label>
+      </fieldset>
+      <div class="field" data-dir hidden>
+        <label for="c-dir" data-i18n="cart.dir">Dirección de entrega</label>
+        <textarea id="c-dir" name="direccion" rows="2" placeholder="Residencial, calle, número y una referencia" aria-describedby="c-dir-err" data-i18n-ph="cart.dirph"></textarea>
+        <p class="field__err" id="c-dir-err" role="alert"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="c-hora" data-i18n="cart.hora">¿Para cuándo?</label>
+          <select id="c-hora" name="hora"><option value="Lo antes posible" data-i18n="cart.ya">Lo antes posible</option></select>
+        </div>
+        <div class="field">
+          <label for="c-pago" data-i18n="cart.pago">Forma de pago</label>
+          <select id="c-pago" name="pago">
+            <option value="Efectivo" data-i18n="cart.efectivo">Efectivo</option>
+            <option value="Tarjeta" data-i18n="cart.tarjeta">Tarjeta</option>
+            <option value="Transferencia" data-i18n="cart.transfer">Transferencia</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="c-nombre" data-i18n="res.nombre">Tu nombre</label>
+        <input id="c-nombre" name="nombre" type="text" autocomplete="name" maxlength="60" required aria-describedby="c-nombre-err">
+        <p class="field__err" id="c-nombre-err" role="alert"></p>
+      </div>
+      <div class="field">
+        <label for="c-nota" data-i18n="cart.nota">Nota (opcional)</label>
+        <input id="c-nota" name="nota" type="text" maxlength="140" placeholder="Sin cebolla, tres leches de chocolate…" data-i18n-ph="cart.notaph">
+      </div>
+    </div>
+    <div class="drawer__foot">
+      <div class="cart-total" data-cart-total></div>
+      <button class="btn btn--wa btn--block" type="submit"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="cart.enviar">Enviar pedido por WhatsApp</span></button>
+    </div>
+  </form>
+</dialog>

@@ -1,0 +1,70 @@
+<dialog class="modal" id="reservar" aria-labelledby="reservar-t">
+  <form class="modal__body" method="dialog" novalidate data-reserva>
+    <div class="modal__head">
+      <div>
+        <h2 id="reservar-t" data-i18n="res.titulo">Reserva tu mesa</h2>
+        <p class="modal__sub" data-i18n="res.sub">Te confirmamos por WhatsApp. Si vienes en grupo, avísanos y te preparamos el patio.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Cerrar" data-i18n-aria="cerrar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="r-fecha" data-i18n="res.fecha">Fecha</label>
+        <input id="r-fecha" name="fecha" type="date" required aria-describedby="r-fecha-err">
+        <p class="field__err" id="r-fecha-err" role="alert"></p>
+      </div>
+      <div class="field">
+        <label for="r-hora" data-i18n="res.hora">Hora</label>
+        <select id="r-hora" name="hora" required aria-describedby="r-hora-err"><option value="" data-i18n="res.eligefecha">Elige la fecha primero</option></select>
+        <p class="field__err" id="r-hora-err" role="alert"></p>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="r-personas" data-i18n="res.personas">Personas</label>
+        <select id="r-personas" name="personas" required>
+          <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option value="12 a 20">12 a 20</option><option value="Más de 20" data-i18n="res.masde20">Más de 20</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="r-area" data-i18n="res.area">Dónde</label>
+        <select id="r-area" name="area">
+          <option value="Patio bajo la enramada" data-i18n="res.patio">Patio bajo la enramada</option>
+          <option value="Salón con aire acondicionado" data-i18n="res.salon">Salón con aire acondicionado</option>
+          <option value="Donde haya espacio" data-i18n="res.igual">Me da igual</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="r-ocasion" data-i18n="res.ocasion">Ocasión</label>
+      <select id="r-ocasion" name="ocasion">
+        <option value="Desayuno" data-i18n="res.oc.desayuno">Desayuno</option>
+        <option value="Café con amigos" data-i18n="res.oc.cafe">Café con amigos</option>
+        <option value="Cumpleaños" data-i18n="res.oc.cumple">Cumpleaños</option>
+        <option value="Grupo o misión" data-i18n="res.oc.grupo">Grupo o misión</option>
+        <option value="Reunión de trabajo" data-i18n="res.oc.trabajo">Reunión de trabajo</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="r-nombre" data-i18n="res.nombre">Tu nombre</label>
+      <input id="r-nombre" name="nombre" type="text" autocomplete="name" required maxlength="60" aria-describedby="r-nombre-err">
+      <p class="field__err" id="r-nombre-err" role="alert"></p>
+    </div>
+    <button class="btn btn--wa btn--block" type="submit"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="res.enviar">Enviar reserva por WhatsApp</span></button>
+    <p class="modal__note" data-i18n="res.nota">Se abre WhatsApp con tu mensaje listo. Tú decides si lo envías.</p>
+  </form>
+</dialog>
+
+<dialog class="lightbox" id="visor" aria-label="Visor de fotos">
+  <div class="lightbox__top">
+    <span data-lb-count></span>
+    <button class="icon-btn" type="button" data-close aria-label="Cerrar visor" data-i18n-aria="cerrar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="lightbox__stage" data-lb-stage>
+    <img data-lb-img alt="">
+    <button class="icon-btn lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Foto anterior" data-i18n-aria="lb.prev"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+    <button class="icon-btn lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Foto siguiente" data-i18n-aria="lb.next"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+  </div>
+  <p class="lightbox__cap" data-lb-cap></p>
+</dialog>
