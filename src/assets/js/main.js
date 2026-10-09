@@ -67,7 +67,7 @@
   function computeStatus(n = nowSD()) {
     const open = (closeAt) => {
       const left = closeAt - n.min;
-      return { state: left <= 30 ? "soon" : "open", closeAt: closeAt % 1440 };
+      return { state: left < 30 ? "soon" : "open", closeAt: closeAt % 1440 };
     };
     // Turno de ayer que cruza la medianoche
     for (const [, b] of shifts((n.dow + 6) % 7)) if (b > 1440 && n.min < b - 1440) return open(b - 1440);
@@ -204,7 +204,8 @@
       a.href = `?lang=${other}${location.hash}`;
       a.hreflang = other; a.lang = other;
       a.textContent = a.textContent.trim().length > 2 ? (other === "en" ? "English" : "Español") : other.toUpperCase();
-      a.setAttribute("aria-label", other === "en" ? "View this site in English" : "Ver el sitio en español");
+      const short = a.textContent.trim().length <= 2;
+      a.setAttribute("aria-label", other === "en" ? (short ? "EN: view this site in English" : "View this site in English") : (short ? "ES: ver el sitio en español" : "Ver el sitio en español"));
     });
     document.querySelectorAll("[data-wa-generic]").forEach((a) => {
       a.href = wa(t("wa.hola", "¡Hola, Leche + Miel! Les escribo desde su página web."));

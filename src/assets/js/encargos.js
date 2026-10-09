@@ -21,7 +21,7 @@
   if (f) {
     const prevImg = document.querySelector("[data-prev-img]");
     const tag = document.querySelector("[data-tag]");
-    const tagTxt = document.querySelector("[data-tag-txt]");
+    const tagTxts = document.querySelectorAll("[data-tag-txt]");
     const msgEl = document.querySelector("[data-prev-msg]");
     const dediN = document.querySelector("[data-dedi-n]");
     const kind = () => f.tipo.value;
@@ -73,7 +73,7 @@
     let typing;
     function render() {
       const v = f.dedicatoria.value.trim();
-      tagTxt.textContent = v || placeholder();
+      tagTxts.forEach((el) => (el.textContent = v || placeholder()));
       dediN.textContent = f.dedicatoria.value.length;
       msgEl.textContent = message();
     }

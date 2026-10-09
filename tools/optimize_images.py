@@ -45,6 +45,7 @@ FOTOS = {
 }
 
 
+HERO = {"mostrador"}  # foto del primer pantallazo: más liviana
 MANIFEST = ROOT / "tools" / "images.json"
 
 
@@ -74,14 +75,13 @@ def main():
         for w in widths:
             h = round(im.height * w / im.width)
             out = OUT / f"{name}-{w}.webp"
-            im.resize((w, h), Image.LANCZOS).save(out, "WEBP", quality=78, method=6)
+            q = 70 if name in HERO else 78
+            im.resize((w, h), Image.LANCZOS).save(out, "WEBP", quality=q, method=6)
             after += out.stat().st_size
         data[name] = {"w": im.width if im.width <= WIDTHS[-1] else WIDTHS[-1],
                       "h": round(im.height * min(im.width, WIDTHS[-1]) / im.width),
                       "widths": widths}
-    (ROOT / "tools" / "images.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
-    js = "/* Generado por tools/optimize_images.py — no editar a mano */\nwindow.IMG = " + json.dumps(data, separators=(",", ":")) + ";\n"
-    (ROOT / "src" / "assets" / "js" / "images.js").write_text(js, encoding="utf-8")
+    save_manifest(data)
     print(f"{len(FOTOS)} fotos - originales {before/1e6:.1f} MB -> webp {after/1e6:.1f} MB")
 
 

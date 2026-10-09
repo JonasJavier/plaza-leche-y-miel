@@ -293,6 +293,9 @@
   refreshFab(false);
   apply();
   arrows();
+  // Recalcula cuando terminan de cargar las fuentes (cambian el ancho de la barra)
+  if (document.fonts) document.fonts.ready.then(arrows);
+  window.addEventListener("load", arrows);
 
   /* Si llegan desde un favorito del inicio (#item-...), lo mostramos */
   if (location.hash.startsWith("#item-") || location.hash.startsWith("#cat-")) {

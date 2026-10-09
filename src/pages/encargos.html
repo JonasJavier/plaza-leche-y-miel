@@ -44,12 +44,12 @@ scripts: images.js, encargos.js
               </select>
             </div>
           </div>
-          <fieldset class="seg" data-for="bandeja">
+          <fieldset class="seg" data-for="bandeja" hidden>
             <legend class="field__label" data-i18n="enc.para">¿Para cuántos?</legend>
             <label><input type="radio" name="bandeja" value="Para 1 persona" checked><span data-i18n="enc.para1">Para 1</span></label>
             <label><input type="radio" name="bandeja" value="Para 2 personas"><span data-i18n="enc.para2">Para 2</span></label>
           </fieldset>
-          <div class="field-row" data-for="galletas">
+          <div class="field-row" data-for="galletas" hidden>
             <div class="field">
               <label for="e-cant" data-i18n="enc.cant">Cantidad</label>
               <select id="e-cant" name="cantidad">
@@ -61,7 +61,7 @@ scripts: images.js, encargos.js
               <input id="e-tema" name="tema" type="text" maxlength="40" placeholder="Vintage, safari, rosado…" data-i18n-ph="enc.temaph">
             </div>
           </div>
-          <div data-for="picaderas" class="fields">
+          <div data-for="picaderas" class="fields" hidden>
             <fieldset class="checks" style="border:0;padding:0;margin:0">
               <legend class="field__label" data-i18n="enc.cuales">¿Cuáles?</legend>
               <label><input type="checkbox" name="picaderas" value="Croquetas de pollo" checked><span data-i18n="enc.p1">Croquetas de pollo</span></label>
@@ -76,7 +76,10 @@ scripts: images.js, encargos.js
           </div>
           <div class="field" data-for="bizcocho bandeja galletas">
             <label for="e-dedicatoria" data-i18n="enc.dedi">Dedicatoria</label>
-            <input id="e-dedicatoria" name="dedicatoria" type="text" maxlength="40" placeholder="¡Feliz día, mamá!" aria-describedby="e-dedi-c" data-i18n-ph="enc.dediph">
+            <div class="dedi">
+              <input id="e-dedicatoria" name="dedicatoria" type="text" maxlength="40" placeholder="¡Feliz día, mamá!" aria-describedby="e-dedi-c" data-i18n-ph="enc.dediph">
+              <div class="mini-tag" aria-hidden="true"><span data-tag-txt>¡Feliz día, mamá!</span></div>
+            </div>
             <p class="counter" id="e-dedi-c" aria-live="polite"><span data-dedi-n>0</span>/40</p>
           </div>
           <div class="field-row">
