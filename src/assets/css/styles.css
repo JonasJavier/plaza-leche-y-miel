@@ -283,7 +283,9 @@ em, .italic { font-family: var(--f-display); font-style: italic; }
 .hero__photo figcaption strong { font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: var(--step-1); color: #fff; }
 @media (min-width: 768px) {
   .hero { padding-block: 40px 24px; }
-  .mural { width: min(70%, 25rem); }
+  .hero__grid { grid-template-columns: 1fr .9fr; gap: 32px; align-items: center; }
+  .hero__photo { max-height: none; aspect-ratio: 3 / 4; }
+  .mural { width: min(92%, 25rem); }
 }
 @media (min-width: 1024px) {
   .hero__grid { grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
