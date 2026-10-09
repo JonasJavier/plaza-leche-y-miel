@@ -636,7 +636,7 @@ em, .italic { font-family: var(--f-display); font-style: italic; }
 
 .cats { position: sticky; top: var(--header-h); z-index: 20; background: rgba(43, 46, 42, .97); border-bottom: 1px solid rgba(243,240,230,.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .cats__in { display: flex; align-items: center; gap: 8px; }
-.cats__list { list-style: none; flex: 1; min-width: 0; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-block: 8px; scroll-behavior: smooth; }
+.cats__list { list-style: none; flex: 1; min-width: 0; min-height: 60px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-block: 8px; scroll-behavior: smooth; }
 .cats__list::-webkit-scrollbar { display: none; }
 .cats__list a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; white-space: nowrap; text-decoration: none; font-weight: 600; font-size: var(--step--1); color: var(--tiza-suave); }
 .cats__list a.is-active { color: var(--pizarra); background: var(--tiza); }
@@ -646,6 +646,8 @@ em, .italic { font-family: var(--f-display); font-style: italic; }
 .cats__btn[disabled] { opacity: .35; cursor: default; }
 @media (min-width: 1024px) { .cats__btn span { display: inline; } .cats__btn { padding: 0 14px; } }
 
+/* Reserva el espacio de la carta mientras el JS la dibuja (evita saltos) */
+[data-menu]:empty { min-height: 160vh; }
 .menu-cat { padding-top: 40px; }
 .menu-cat__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px dashed rgba(243,240,230,.25); }
 .menu-cat__head h2 { font-size: var(--step-4); font-style: italic; color: var(--miel); }
